@@ -1,0 +1,4 @@
+char[] test = new char[]{'a', 'b', 'c'};
+String string = String.valueOf(test);
+System.out.println(string);
+

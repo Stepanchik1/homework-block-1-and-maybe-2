@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        String Name = "Ivan ";
+        String Surname = "Ivanov ";
+        String patronymic = "Ivanovich ";
+        String otchet = (Name+Surname+patronymic);
+        System.out.println(otchet);
+String OTCHET = otchet.toUpperCase();
+        System.out.println(OTCHET);
+        String SSS = "Семёнов Семён Семёнович";
+        String SSS2 = SSS.replace('ё', 'е');
+        System.out.println(SSS);
+        System.out.println(SSS2);
+        String [] SSSmassive = SSS2.split(" "); //Просто тренеруюсь
+        System.out.println(SSSmassive[0]);
+        System.out.println(SSSmassive[1]);
+        System.out.println(SSSmassive[2]);
+//Вай, здорово!
+
+
+
+
+    }
+}
