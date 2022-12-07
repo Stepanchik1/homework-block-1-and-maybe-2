@@ -1,7 +1,0 @@
- Book GarryPotter = new Book();
-     GarryPotter.autor = "JulyRolling";
-     GarryPotter.name = "Гарри Поттер и философский камень";
-     GarryPotter.scale= 320;
-
-   GarryPotter.scale = GarryPotter.scale*2;
-        System.out.println(GarryPotter.scale);
