@@ -13,32 +13,17 @@ public class Main {
         System.out.println(VK.getYear() + " " + VK.getTitle() + " "+ JT.getName()+JT.getSurname());
         GP.setYear(2012);
         JT.setName("Ronald ");
-        System.out.println(GP.getYear() + " " + GP.getTitle() + " "+ JR.getName()+JR.getSurname());
-        System.out.println(VK.getYear() + " " + VK.getTitle() + " "+ JT.getName()+JT.getSurname());
 
-boolean f = GP.equals(VK);
-        System.out.println(f);
-        System.out.println(VK);
-        System.out.println(VK.toString());
+        System.out.println(GP.getYear() + " " + GP.getTitle() + " "+ GP.getAutor().getName()+GP.getAutor().getSurname());
+        System.out.println(VK.getYear() + " " + VK.getTitle() + " "+ VK.getAutor().getName()+VK.getAutor().getSurname());
 
-
-
+        System.out.println(GP.equals(VK)); //Проверяем equals
         Book VK2 = new Book(1954, "Влателин Колец", JT);
+        System.out.println(VK.equals(VK2));
+        System.out.println(VK+" и "+GP);  //Проверяем toString
+        System.out.println(JT+" и "+JR);
 
 
-      boolean g = VK.equals(VK2);
-        System.out.println(g);
-        System.out.println(VK.getClass());
-
-
-        System.out.println("абвгд" == "абвгд");
-        Provement A = new Provement();
-        Provement B = new Provement();
-        System.out.println(A.toString().equals(B.toString()));
-        System.out.println(Provement.DD);
-        System.out.println(A.DD == B.DD);
-
-        System.out.println(VK.hashCode()+" "+VK2.hashCode());
 
     }
     }
