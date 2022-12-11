@@ -4,9 +4,9 @@ public class Author {
 private String name;
 private String surname;
 
-public Author (String a, String b) {
-    this.name = a;
-    this.surname = b;
+public Author (String name, String surname) {
+    this.name = name;
+    this.surname = surname;
 }
 
 public String getName () {
