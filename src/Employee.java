@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Employee {
     private String name;
-    private String  surname;
+    private String surname;
     private String patronymic;
     private int ID;
     private byte departmentNumber;
@@ -105,23 +105,26 @@ public class Employee {
     @Override
     public String toString() {
         return // "Данные сотрудника: \n" +
-                "Фамилия: " + this.surname +"\n"+
-                "Имя: " + this.name + "\n"+
-                "Отчество: " + this.patronymic +"\n"+
-                "ID: " + this.ID+"\n"+
-                "Отдел: " + WhatTheDepartment(this.departmentNumber) +"\n"+
-                "Зарплата: " + this.salary +" руб/мес\n"+
-                "Номер телефона: " + this.telephoneNumber +"\n"+
-                "Семейный статус: " + familyStatusToString(this.FamilyStatus)
+                "Фамилия: " + this.surname + "\n" +
+                        "Имя: " + this.name + "\n" +
+                        "Отчество: " + this.patronymic + "\n" +
+                        "ID: " + this.ID + "\n" +
+                        "Отдел: " + whatTheDepartment(this.departmentNumber) + "\n" +
+                        "Зарплата: " + this.salary + " руб/мес\n" +
+                        "Номер телефона: " + this.telephoneNumber + "\n" +
+                        "Семейный статус: " + familyStatusToString(this.FamilyStatus)
                 ;
     }
 
-    public static String familyStatusToString (boolean FamilyStatus) {
-        if (FamilyStatus == true) {return "женат";}
-        else {return "не женат";}
+    public static String familyStatusToString(boolean FamilyStatus) {
+        if (FamilyStatus == true) {
+            return "женат";
+        } else {
+            return "не женат";
+        }
     }
 
-    public String WhatTheDepartment (int i) {
+    public String whatTheDepartment(int i) {
         switch (i) {
             case 1:
                 return "Производственный отдел";
@@ -138,5 +141,28 @@ public class Employee {
         }
     }
 
+    public static String outDepartment(int dep) {
+        String WhatTheDepartment = "";
+        switch (dep) {
+            case 1:
+                WhatTheDepartment = "производственном отделе";
+                break;
+            case 2:
+                WhatTheDepartment = "отделе кадров";
+                break;
+            case 3:
+                WhatTheDepartment = "отделе разработок";
+                break;
+            case 4:
+                WhatTheDepartment = "отделе продаж";
+                break;
+            case 5:
+                WhatTheDepartment = "отделе обслуживания";
+                break;
+            default:
+                break;
 
+        }
+        return WhatTheDepartment;
+    }
 }
