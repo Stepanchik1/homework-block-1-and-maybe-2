@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("123");
+        sb.append(456);
+        System.out.println(sb);
+        String s = sb.toString();
+        System.out.println(s);
+        String s1 = s.replace('1','0');
+        System.out.println(s1);
+        sb = sb.reverse();
+        System.out.println(sb);
+        sb.insert(2, "ffffuff");
+        System.out.println(sb);
+        sb.delete(2, 2+"ffffuff".length());
+        System.out.println(sb);
+        char a = sb.charAt(3);
+        System.out.println(a);
+        System.out.println(sb);
+        String s2 = sb.toString();
+        for (int i=0; i!=s2.length()+1; i++ ) {
+            sb.insert(i+i, "a");}
+        System.out.println(sb);
+        StringBuilder G = new StringBuilder("     hhhhh h   ");
+        String GG = G.toString();
+        String GGG = GG.trim();
+        System.out.println(GGG);
+        System.out.println(G);
+        G.replace(0,5, "oooooooo");
+        System.out.println(G);
+        G.delete(0, "oooooooo".length());
+        System.out.println(G);
+    }}

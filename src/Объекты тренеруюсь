@@ -1,0 +1,60 @@
+public class Main {
+    static String name = "Я";
+    public static void main(String[] args) {
+
+        int year = 2012;
+        String title = "Гарри Поттер";
+        Author JR = Author.autorcr("Joan ", "Rolling " );
+        Book GP = new Book (year, title, JR);
+        System.out.println(GP.year + " "+ GP.Title+ " " + GP.autor.name + GP.autor.sirname);
+
+        Author JT = Author.autorcr("John ", "Tolkin");
+
+        Book Vk = new Book( 1956, "Властелин колец", JT);
+
+       System.out.println(Vk.year + " "+ Vk.Title + " "+ Vk.autor.name + Vk.autor.sirname);
+
+
+
+
+
+    }
+    }
+
+public class Book {
+    static int year = 5;
+    static String Title;
+    static Author autor;
+
+    public Book() {
+
+    }
+
+    public static Book Bookcr (int y, String tit, Author autor) {
+        Book book = new Book ();
+        Book.year = y;
+        Book.Title = tit;
+        Book.autor = autor;
+        return book;
+    }
+
+
+    public Book (int y, String tit, Author autor) {
+        this.Book2(2, this.Title, autor);
+    }
+     public Book Book2 (int b, String tita, Author autor) {
+            this.year = b;
+            this.Title = Main.name;
+            this.autor = autor;
+return this;
+
+
+
+        }
+
+    public String etTitle () {
+        return this.Title;
+    }
+
+
+   }
