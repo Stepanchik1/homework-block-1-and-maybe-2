@@ -73,7 +73,7 @@ public class Enter {
 
         }
 
-        public static String[] FIO () {
+        public static String[] fio () {
             Scanner in = new Scanner(System.in);
             System.out.println("Введите имя: ");
             String name = in.nextLine();
@@ -102,14 +102,14 @@ public class Enter {
             return salary;
         }
 
-        public static byte Comand () {
+        public static byte comand () {
             Scanner in = new Scanner(System.in);
             System.out.println("Что желаете сделать? \n Нажмите: \n 1 - Создать нового сотрудника \n 2 - Изменить данные сотрудника \n 3 - Удалить сотрудника \n 4 - Найти сотрудника \n 5 - Анализ данных по зарплате \n Чтобы выйти введите 0");
             byte comand = in.nextByte();
             return comand;
         }
 
-        public static byte NumberOfDepartment () {
+        public static byte numberOfDepartment () {
             for (; ; ) {
                 Scanner in = new Scanner(System.in);
                 System.out.println("Введите номер отдела сотрудника: \n 1 - Производственный отдел \n 2 - Отдел кадров \n 3 - Отдел разработок \n 4 - отдел продаж \n 5 - отдел обслуживания");
@@ -156,7 +156,7 @@ public class Enter {
             }
         }
     }
-    public static byte NumberOfDepartmentWith0 () {
+    public static byte numberOfDepartmentWith0 () {
         for (; ; ) {
             Scanner in = new Scanner(System.in);
             System.out.println("Введите номер отдела сотрудника: \n 1 - Производственный отдел \n 2 - Отдел кадров \n 3 - Отдел разработок \n 4 - отдел продаж \n 5 - отдел обслуживания \n 0 - Назад");
@@ -170,7 +170,7 @@ public class Enter {
     }
 
 
-    public static byte NumberOfDepartmentWith0and6 () {
+    public static byte numberOfDepartmentWith0and6 () {
         for (; ; ) {
             Scanner in = new Scanner(System.in);
             System.out.println("Введите номер отдела сотрудника: \n 1 - Производственный отдел \n 2 - Отдел кадров \n 3 - Отдел разработок \n 4 - отдел продаж \n 5 - отдел обслуживания \n 6 - Все предприятие \n 0 - Назад");

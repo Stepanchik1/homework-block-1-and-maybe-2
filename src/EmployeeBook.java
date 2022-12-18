@@ -12,9 +12,9 @@ public class EmployeeBook {
         EmployeeBook.employee = employee;
     }
 
-    public void CreateEmployee() {
-        String FIO[] = Enter.FIO();
-        int Department = Enter.NumberOfDepartment();
+    public void createEmployee() {
+        String FIO[] = Enter.fio();
+        int Department = Enter.numberOfDepartment();
         long telephone = Enter.enterTelephoneNumber();
         boolean IsMarried = Enter.isMarried();
         int salary = Enter.salary();
@@ -97,7 +97,7 @@ public class EmployeeBook {
                             System.out.println("Данные сотрудника успешно изменены: \n" + EmployeeBook.employee[ID - 10001]);
                             break;
                         case 5:
-                            int dep = Enter.NumberOfDepartment();
+                            int dep = Enter.numberOfDepartment();
                             EmployeeBook.getEmployee()[ID - 10001].setDepartmentNumber((byte) dep);
                             int newIDdep = Enter.generateID((byte) dep);
                             if (newIDdep==0) {System.out.println("Вы вернулись в начало (Изменить сотрудника):");
@@ -140,10 +140,10 @@ public class EmployeeBook {
                                 break;
                             }
                         case 9:
-                            String[] FIO = Enter.FIO();
+                            String[] FIO = Enter.fio();
                             long tellall = Enter.enterTelephoneNumber();
                             boolean marriedall = Enter.isMarried();
-                            int departmentall = Enter.NumberOfDepartment();
+                            int departmentall = Enter.numberOfDepartment();
                             int salaryall = Enter.salary();
                             if ((byte) departmentall == EmployeeBook.getEmployee()[ID - 10001].getDepartmentNumber()) {
                                 EmployeeBook.getEmployee()[ID - 10001].setName(FIO[0]);
@@ -353,37 +353,18 @@ public class EmployeeBook {
 
     public static void findExployeeForDepartment() {
         for (; ; ) {
-            byte dep = Enter.NumberOfDepartmentWith0();
+            byte dep = Enter.numberOfDepartmentWith0();
             if (dep == 0) {
                 break;
             }
-            String WhatTheDepartment = "";
-            switch (dep) {
-                case 1:
-                    WhatTheDepartment = "производственном отделе";
-                    break;
-                case 2:
-                    WhatTheDepartment = "отделе кадров";
-                    break;
-                case 3:
-                    WhatTheDepartment = "отделе разработок";
-                    break;
-                case 4:
-                    WhatTheDepartment = "отделе продаж";
-                    break;
-                case 5:
-                    WhatTheDepartment = "отделе обслуживания";
-                    break;
-                default:
-                    break;
-            }
+
             boolean findOrNo = false;
             int number = 0;
             for (int i = 0; i < EmployeeBook.getEmployee().length; i++) {
                 if (EmployeeBook.getEmployee()[i] != null) {
                     if (dep == EmployeeBook.getEmployee()[i].getDepartmentNumber()) {
                         if (findOrNo == false) {
-                            System.out.println("В " + WhatTheDepartment + " найдены следующие сотрудники: \n");
+                            System.out.println("В " + Employee.outDepartment(dep) + " найдены следующие сотрудники: \n");
                             findOrNo = true;
                         }
                         number++;
@@ -393,13 +374,13 @@ public class EmployeeBook {
             }
 
             if (findOrNo == false) {
-                System.out.println("В " + WhatTheDepartment + " сотрудники не найдены \n");
+                System.out.println("В " + Employee.outDepartment(dep) +" сотрудники не найдены \n");
             }
         }
     }
 
     public static void findForFamilyStatus() {
-        int dep = Enter.NumberOfDepartmentWith0and6();
+        int dep = Enter.numberOfDepartmentWith0and6();
         if (dep != 0) {
             boolean exit = false;
             for (;exit==false ; ) {
@@ -573,7 +554,7 @@ public class EmployeeBook {
     }
    public static void sortingForDepartment () {
         for (;;) {
-            int dep = Enter.NumberOfDepartmentWith0();
+            int dep = Enter.numberOfDepartmentWith0();
             if (dep==0) {
                 System.out.println("Назад");break;}
             boolean exit = false;
@@ -609,27 +590,7 @@ switch (chose) {
                 }
             }
         }
-        String WhatTheDepartment = "";
-        switch (dep) {
-            case 1:
-                WhatTheDepartment = "производственном отделе";
-                break;
-            case 2:
-                WhatTheDepartment = "отделе кадров";
-                break;
-            case 3:
-                WhatTheDepartment = "отделе разработок";
-                break;
-            case 4:
-                WhatTheDepartment = "отделе продаж";
-                break;
-            case 5:
-                WhatTheDepartment = "отделе обслуживания";
-                break;
-            default:
-                break;
-        }
-        System.out.println("Самая высокая зарплата в " + WhatTheDepartment + " - " + salary + " руб/мес");
+        System.out.println("Самая высокая зарплата в " + Employee.outDepartment(dep) + " - " + salary + " руб/мес");
     }
 
     public static void sortingForDepartmentDown (int dep) {
@@ -641,27 +602,8 @@ switch (chose) {
                 }
             }
         }
-        String WhatTheDepartment = "";
-        switch (dep) {
-            case 1:
-                WhatTheDepartment = "производственном отделе";
-                break;
-            case 2:
-                WhatTheDepartment = "отделе кадров";
-                break;
-            case 3:
-                WhatTheDepartment = "отделе разработок";
-                break;
-            case 4:
-                WhatTheDepartment = "отделе продаж";
-                break;
-            case 5:
-                WhatTheDepartment = "отделе обслуживания";
-                break;
-            default:
-                break;
-        }
-        System.out.println("Самая низкая зарплата в " + WhatTheDepartment + " - " + salary + " руб/мес");
+
+        System.out.println("Самая низкая зарплата в " + Employee.outDepartment(dep) + " - " + salary + " руб/мес");
     }
 
     public static void sortingForDepartmentAverage (int dep) {
@@ -674,27 +616,8 @@ switch (chose) {
             }
         }
         int average = salary/number;
-        String WhatTheDepartment = "";
-        switch (dep) {
-            case 1:
-                WhatTheDepartment = "производственном отделе";
-                break;
-            case 2:
-                WhatTheDepartment = "отделе кадров";
-                break;
-            case 3:
-                WhatTheDepartment = "отделе разработок";
-                break;
-            case 4:
-                WhatTheDepartment = "отделе продаж";
-                break;
-            case 5:
-                WhatTheDepartment = "отделе обслуживания";
-                break;
-            default:
-                break;
-        }
-        System.out.println("Средняя зарплата в " + WhatTheDepartment + " - "+average+" руб/мес");
+
+        System.out.println("Средняя зарплата в " + Employee.outDepartment(dep) + " - "+average+" руб/мес");
     }
 }
 

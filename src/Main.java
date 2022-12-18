@@ -22,10 +22,10 @@ public class Main {
         }
 // С этого момента идет выполнение программы
         for (boolean i = false; i == false; ) {
-            byte comand = Enter.Comand();
+            byte comand = Enter.comand();
             switch (comand) {
                 case 1:
-                    Book.CreateEmployee();
+                    Book.createEmployee();
                     break;
                 case 2:
                     Book.changeEmployee();
