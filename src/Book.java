@@ -37,36 +37,22 @@ public int getYear () {
         this.autor.setSurname(a.getSurname());
     }
 
-
+    @Override
     public String toString () {
     return this.autor.toString() + " " + this.Title + " " + this.year;
     }
 
-    public boolean equals (Book New) {
-    // boolean a = this.year == New.year;
-    // boolean b = this.Title == New.Title;
-    // boolean c = this.autor == New.autor;
-
-    if (this.getClass() != New.getClass()) {
-
-        return  false;}
-
-
-        else if (this.year==New.year&&this.Title==New.Title&&this.autor == New.autor) {
-
-           // New = (Book) this;
-
-            return true;}
-
-        else {return false;}
-
-
-
-
-}
     @Override
     public int hashCode() {
         return Objects.hash(year, Title, autor);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return year == book.year && Objects.equals(Title, book.Title) && Objects.equals(autor, book.autor);
     }
 }
 

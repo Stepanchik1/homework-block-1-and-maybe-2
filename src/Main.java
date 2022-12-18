@@ -22,8 +22,5 @@ public class Main {
         System.out.println(VK.equals(VK2));
         System.out.println(VK+" и "+GP);  //Проверяем toString
         System.out.println(JT+" и "+JR);
-
-
-
     }
     }

@@ -39,6 +39,7 @@ public String getSurname () {
         return Objects.hash(name, surname);
     }
 
+    @Override
     public String toString () {
     return this.name + this.surname;
 
